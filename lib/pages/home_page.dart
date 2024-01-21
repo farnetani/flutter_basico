@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_iniciante/pages/pageViews/one_page.dart';
 import 'package:flutter_iniciante/pages/pageViews/perfil_page.dart';
+import 'package:flutter_iniciante/pages/pageViews/produtos_page.dart';
 import 'package:flutter_iniciante/pages/pageViews/configuracoes_page.dart';
 
 // ignore_for_file: must_be_immutable
@@ -14,6 +15,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  _HomePageState({
+    required this._pageController,
+    required this.pageSelected
+  });
   final PageController _pageController = PageController();
   int pageSelected = 0;
   accountName() => const Text('Arlei F. Farnetani Junior');
@@ -72,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                     log('Perfil');
                     Navigator.pop(context);
                     setState(() {
-                      pageSelected = 1;
+                      pageSelected = 3;
                       _pageController.animateToPage(
                         pageSelected,
                         duration: const Duration(milliseconds: 500),
@@ -143,6 +148,7 @@ class _HomePageState extends State<HomePage> {
             OnePage(),
             PerfilPage(),
             ConfiguracoesPage(),
+            ProdutosPage(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
