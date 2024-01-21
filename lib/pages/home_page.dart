@@ -1,9 +1,10 @@
 import 'dart:developer';
+import 'pageViews/produtos_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iniciante/pages/pageViews/one_page.dart';
 import 'package:flutter_iniciante/pages/pageViews/perfil_page.dart';
-import 'package:flutter_iniciante/pages/pageViews/produtos_page.dart';
 import 'package:flutter_iniciante/pages/pageViews/configuracoes_page.dart';
+
 
 // ignore_for_file: must_be_immutable
 
@@ -15,10 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  _HomePageState({
-    required this._pageController,
-    required this.pageSelected
-  });
   final PageController _pageController = PageController();
   int pageSelected = 0;
   accountName() => const Text('Arlei F. Farnetani Junior');
