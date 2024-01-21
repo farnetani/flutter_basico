@@ -5,7 +5,6 @@ import 'package:flutter_iniciante/pages/pageViews/one_page.dart';
 import 'package:flutter_iniciante/pages/pageViews/perfil_page.dart';
 import 'package:flutter_iniciante/pages/pageViews/configuracoes_page.dart';
 
-
 // ignore_for_file: must_be_immutable
 
 class HomePage extends StatefulWidget {
@@ -74,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                     log('Perfil');
                     Navigator.pop(context);
                     setState(() {
-                      pageSelected = 3;
+                      pageSelected = 1;
                       _pageController.animateToPage(
                         pageSelected,
                         duration: const Duration(milliseconds: 500),
@@ -143,9 +142,9 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.horizontal,
           children: const [
             OnePage(),
+            ProdutosPage(),
             PerfilPage(),
             ConfiguracoesPage(),
-            ProdutosPage(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -171,6 +170,10 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_basket_outlined),
+              label: 'Produtos',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
